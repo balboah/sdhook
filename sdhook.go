@@ -96,9 +96,6 @@ func New(opts ...Option) (*StackdriverHook, error) {
 	if sh.service == nil && sh.agentClient == nil {
 		return nil, errors.New("no stackdriver service was provided")
 	}
-	if sh.resource == nil && sh.agentClient == nil {
-		return nil, errors.New("the monitored resource was not provided")
-	}
 	if sh.projectID == "" && sh.agentClient == nil {
 		return nil, errors.New("the project id was not provided")
 	}
